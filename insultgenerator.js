@@ -17,20 +17,25 @@ const insult3 = ['apple-john', 'baggage', 'barnacle', 'bladder', 'boar-pig', 'bu
     'malt-worm', 'mammet', 'measle', 'minnow', 'miscreant', 'moldwarp', 'mumble-news', 'nut-hook', 'pigeon-egg', 'pignut', 'puttock', 
     'pumpion', 'ratsbane', 'scut', 'skainsmate', 'strumpet', 'varlot', 'vassal', 'whey-face', 'wagtail'];
 
-let generateInsult = name => {
+let generateInsult = (name, arr1, arr2, arr3) => {
     let word1 = '';
     let word2 = '';
     let word3 = '';
 
-    let index1 = Math.floor(Math.random * insult1.length);
-    let index2 = Math.floor(Math.random * insult2.length);
-    let index3 = Math.floor(Math.random * insult3.length);
+    let index1 = Math.floor(Math.random() * arr1.length-1);
+    // console.log(index1);
+    let index2 = Math.floor(Math.random() * arr2.length-1);
+    // console.log(index2);
+    let index3 = Math.floor(Math.random() * arr3.length-1);
+    // console.log(index3);
 
-    word1 = insult1[index1];
-    word2 = insult2[index2];
-    word3 = insult3[index3];
+    word1 = arr1[index1];
+    // console.log(word1);
+    word2 = arr2[index2];
+    // console.log(word2);
+    word3 = arr3[index3];
+    // console.log(word3);
 
     return `${name}, thou art a ${word1}, ${word2} ${word3}!`;
 
 };
-
